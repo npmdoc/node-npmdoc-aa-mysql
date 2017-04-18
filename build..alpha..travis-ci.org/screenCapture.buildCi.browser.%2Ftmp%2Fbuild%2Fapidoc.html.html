@@ -1,0 +1,1903 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/amoa400/aa-mysql">aa-mysql (v1.1.2)</a>
+</h1>
+<h4>A simple and flexible mysql library for node.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.aa-mysql">module aa-mysql</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.aa-mysql.conn">
+            function <span class="apidocSignatureSpan">aa-mysql.</span>conn
+            <span class="apidocSignatureSpan">(conf)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.aa-mysql.pool">
+            function <span class="apidocSignatureSpan">aa-mysql.</span>pool
+            <span class="apidocSignatureSpan">(conf)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.aa-mysql.query">
+            function <span class="apidocSignatureSpan">aa-mysql.</span>query
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">aa-mysql.</span>conf</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">aa-mysql.</span>conn.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">aa-mysql.</span>pool.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">aa-mysql.</span>query.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.aa-mysql.conn">module aa-mysql.conn</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.aa-mysql.conn.conn">
+            function <span class="apidocSignatureSpan">aa-mysql.</span>conn
+            <span class="apidocSignatureSpan">(conf)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.aa-mysql.conn.super_">
+            function <span class="apidocSignatureSpan">aa-mysql.conn.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.aa-mysql.conn.prototype">module aa-mysql.conn.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.aa-mysql.conn.prototype.begin">
+            function <span class="apidocSignatureSpan">aa-mysql.conn.prototype.</span>begin
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.aa-mysql.conn.prototype.close">
+            function <span class="apidocSignatureSpan">aa-mysql.conn.prototype.</span>close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.aa-mysql.conn.prototype.commit">
+            function <span class="apidocSignatureSpan">aa-mysql.conn.prototype.</span>commit
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.aa-mysql.conn.prototype.connect">
+            function <span class="apidocSignatureSpan">aa-mysql.conn.prototype.</span>connect
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.aa-mysql.conn.prototype.query">
+            function <span class="apidocSignatureSpan">aa-mysql.conn.prototype.</span>query
+            <span class="apidocSignatureSpan">(sql, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.aa-mysql.conn.prototype.rollback">
+            function <span class="apidocSignatureSpan">aa-mysql.conn.prototype.</span>rollback
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.aa-mysql.conn.prototype.table">
+            function <span class="apidocSignatureSpan">aa-mysql.conn.prototype.</span>table
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.aa-mysql.conn.prototype.transaction">
+            function <span class="apidocSignatureSpan">aa-mysql.conn.prototype.</span>transaction
+            <span class="apidocSignatureSpan">(querys, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.aa-mysql.pool">module aa-mysql.pool</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.aa-mysql.pool.pool">
+            function <span class="apidocSignatureSpan">aa-mysql.</span>pool
+            <span class="apidocSignatureSpan">(conf)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.aa-mysql.pool.prototype">module aa-mysql.pool.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.aa-mysql.pool.prototype.create">
+            function <span class="apidocSignatureSpan">aa-mysql.pool.prototype.</span>create
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.aa-mysql.pool.prototype.delete">
+            function <span class="apidocSignatureSpan">aa-mysql.pool.prototype.</span>delete
+            <span class="apidocSignatureSpan">(conn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.aa-mysql.pool.prototype.get">
+            function <span class="apidocSignatureSpan">aa-mysql.pool.prototype.</span>get
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.aa-mysql.pool.prototype.query">
+            function <span class="apidocSignatureSpan">aa-mysql.pool.prototype.</span>query
+            <span class="apidocSignatureSpan">(sql, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.aa-mysql.pool.prototype.release">
+            function <span class="apidocSignatureSpan">aa-mysql.pool.prototype.</span>release
+            <span class="apidocSignatureSpan">(conn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.aa-mysql.pool.prototype.run">
+            function <span class="apidocSignatureSpan">aa-mysql.pool.prototype.</span>run
+            <span class="apidocSignatureSpan">(data, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.aa-mysql.pool.prototype.table">
+            function <span class="apidocSignatureSpan">aa-mysql.pool.prototype.</span>table
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.aa-mysql.pool.prototype.waiterGet">
+            function <span class="apidocSignatureSpan">aa-mysql.pool.prototype.</span>waiterGet
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.aa-mysql.query">module aa-mysql.query</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.aa-mysql.query.query">
+            function <span class="apidocSignatureSpan">aa-mysql.</span>query
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.aa-mysql.query.prototype">module aa-mysql.query.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.aa-mysql.query.prototype.delete">
+            function <span class="apidocSignatureSpan">aa-mysql.query.prototype.</span>delete
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.aa-mysql.query.prototype.exec">
+            function <span class="apidocSignatureSpan">aa-mysql.query.prototype.</span>exec
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.aa-mysql.query.prototype.field">
+            function <span class="apidocSignatureSpan">aa-mysql.query.prototype.</span>field
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.aa-mysql.query.prototype.find">
+            function <span class="apidocSignatureSpan">aa-mysql.query.prototype.</span>find
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.aa-mysql.query.prototype.insert">
+            function <span class="apidocSignatureSpan">aa-mysql.query.prototype.</span>insert
+            <span class="apidocSignatureSpan">(data, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.aa-mysql.query.prototype.join">
+            function <span class="apidocSignatureSpan">aa-mysql.query.prototype.</span>join
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.aa-mysql.query.prototype.limit">
+            function <span class="apidocSignatureSpan">aa-mysql.query.prototype.</span>limit
+            <span class="apidocSignatureSpan">(offset, rows)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.aa-mysql.query.prototype.option">
+            function <span class="apidocSignatureSpan">aa-mysql.query.prototype.</span>option
+            <span class="apidocSignatureSpan">(op)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.aa-mysql.query.prototype.order">
+            function <span class="apidocSignatureSpan">aa-mysql.query.prototype.</span>order
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.aa-mysql.query.prototype.page">
+            function <span class="apidocSignatureSpan">aa-mysql.query.prototype.</span>page
+            <span class="apidocSignatureSpan">(num, rows)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.aa-mysql.query.prototype.select">
+            function <span class="apidocSignatureSpan">aa-mysql.query.prototype.</span>select
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.aa-mysql.query.prototype.update">
+            function <span class="apidocSignatureSpan">aa-mysql.query.prototype.</span>update
+            <span class="apidocSignatureSpan">(data, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.aa-mysql.query.prototype.where">
+            function <span class="apidocSignatureSpan">aa-mysql.query.prototype.</span>where
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.aa-mysql" id="apidoc.module.aa-mysql">module aa-mysql</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.aa-mysql.conn" id="apidoc.element.aa-mysql.conn">
+        function <span class="apidocSignatureSpan">aa-mysql.</span>conn
+        <span class="apidocSignatureSpan">(conf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">conn = function (conf) {
+  // default config
+  this.conf = {};
+  for (var i in conf) {
+    this.conf[i] = conf[i];
+  }
+  // origin connection
+  this.conn = {};
+  // id
+  this.id = parseInt(Math.random() * 10e6);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.aa-mysql.pool" id="apidoc.element.aa-mysql.pool">
+        function <span class="apidocSignatureSpan">aa-mysql.</span>pool
+        <span class="apidocSignatureSpan">(conf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pool = function (conf) {
+  // default config
+  this.conf = {};
+  for (var i in conf) {
+    this.conf[i] = conf[i];
+  }
+  // total connections
+  this.totConn = 0;
+  // free connections
+  this.freeConn = [];
+  // active connections
+  this.activeConn = [];
+  // waiting list (not that waiter)
+  this.waiter = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.aa-mysql.query" id="apidoc.element.aa-mysql.query">
+        function <span class="apidocSignatureSpan">aa-mysql.</span>query
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">query = function () {
+  this.sql = {};
+  this.op = {};
+  this.conn = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  user: this.conf.user,
+  password: this.conf.pass,
+});
+
+// connect and select database
+this.conn.connect(function(err) {
+  if (!err) {
+    //self.<span class="apidocCodeKeywordSpan">query</span>('USE ' + mescapeId(self.conf.db), callback);
+    self.query('USE `' + self.conf.db + '`', callback);
+  }
+  else {
+    callback(err);
+  }
+});
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.aa-mysql.conn" id="apidoc.module.aa-mysql.conn">module aa-mysql.conn</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.aa-mysql.conn.conn" id="apidoc.element.aa-mysql.conn.conn">
+        function <span class="apidocSignatureSpan">aa-mysql.</span>conn
+        <span class="apidocSignatureSpan">(conf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">conn = function (conf) {
+  // default config
+  this.conf = {};
+  for (var i in conf) {
+    this.conf[i] = conf[i];
+  }
+  // origin connection
+  this.conn = {};
+  // id
+  this.id = parseInt(Math.random() * 10e6);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.aa-mysql.conn.super_" id="apidoc.element.aa-mysql.conn.super_">
+        function <span class="apidocSignatureSpan">aa-mysql.conn.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.aa-mysql.conn.prototype" id="apidoc.module.aa-mysql.conn.prototype">module aa-mysql.conn.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.aa-mysql.conn.prototype.begin" id="apidoc.element.aa-mysql.conn.prototype.begin">
+        function <span class="apidocSignatureSpan">aa-mysql.conn.prototype.</span>begin
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">begin = function (callback) {
+  this.query('BEGIN', callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    } else {
+      self.commit();
+      callback(null, retRes);
+    }
+  }
+}
+
+this.<span class="apidocCodeKeywordSpan">begin</span>();
+for (var i = 0; i &lt; querys.length; i++) {
+  (function(i){
+    self.query(querys[i], function(err, res) {
+      cb(err, res, i);
+    });
+  })(i);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.aa-mysql.conn.prototype.close" id="apidoc.element.aa-mysql.conn.prototype.close">
+        function <span class="apidocSignatureSpan">aa-mysql.conn.prototype.</span>close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function () {
+  if (this.closed) return;
+  this.closed = true;
+  this.conn.destroy();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @param {String} sql string
+*/
+AAConn.prototype.query = function(sql, callback) {
+ var self = this;
+ callback = callback || function() {};
+ this.conn.query(sql, function(err, res) {
+   if (err &amp;&amp; err.fatal) {
+     self.<span class="apidocCodeKeywordSpan">close</span>();
+   }
+   callback(err, res);
+ });
+}
+
+/**
+* begin transaction
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.aa-mysql.conn.prototype.commit" id="apidoc.element.aa-mysql.conn.prototype.commit">
+        function <span class="apidocSignatureSpan">aa-mysql.conn.prototype.</span>commit
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">commit = function (callback) {
+  this.query('COMMIT', callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  retRes[id] = res;
+
+  if (tot === querys.length) {
+    if (retErr) {
+      self.rollback();
+      callback(retErr, retRes);
+    } else {
+      self.<span class="apidocCodeKeywordSpan">commit</span>();
+      callback(null, retRes);
+    }
+  }
+}
+
+this.begin();
+for (var i = 0; i &lt; querys.length; i++) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.aa-mysql.conn.prototype.connect" id="apidoc.element.aa-mysql.conn.prototype.connect">
+        function <span class="apidocSignatureSpan">aa-mysql.conn.prototype.</span>connect
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function (callback) {
+  var self = this;
+  callback = callback || function() {};
+
+  // create original connection
+  this.conn = mysql.createConnection({
+    host: this.conf.host,
+    port: this.conf.port,
+    user: this.conf.user,
+    password: this.conf.pass,
+  });
+
+  // connect and select database
+  this.conn.connect(function(err) {
+    if (!err) {
+      //self.query('USE ' + mescapeId(self.conf.db), callback);
+      self.query('USE `' + self.conf.db + '`', callback);
+    }
+    else {
+      callback(err);
+    }
+  });
+
+  // bind events
+  this.conn.on('error', function(err) {
+    self.emit('error', err);
+  });
+  this.conn.on('end', function(err) {
+    self.emit('end', err);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+db: 'aa-mysql',
+connLimit: 20
+});
+
+// use single connection to query
+// you can also use connection pool, and it is recommended
+var conn = aamysql.create();
+conn.<span class="apidocCodeKeywordSpan">connect</span>(function(err) {
+if (err) {
+  console.log(err);
+  return;
+}
+
+// select
+conn.table('user').select(function(err, res) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.aa-mysql.conn.prototype.query" id="apidoc.element.aa-mysql.conn.prototype.query">
+        function <span class="apidocSignatureSpan">aa-mysql.conn.prototype.</span>query
+        <span class="apidocSignatureSpan">(sql, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">query = function (sql, callback) {
+  var self = this;
+  callback = callback || function() {};
+  this.conn.query(sql, function(err, res) {
+    if (err &amp;&amp; err.fatal) {
+      self.close();
+    }
+    callback(err, res);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  user: this.conf.user,
+  password: this.conf.pass,
+});
+
+// connect and select database
+this.conn.connect(function(err) {
+  if (!err) {
+    //self.<span class="apidocCodeKeywordSpan">query</span>('USE ' + mescapeId(self.conf.db), callback);
+    self.query('USE `' + self.conf.db + '`', callback);
+  }
+  else {
+    callback(err);
+  }
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.aa-mysql.conn.prototype.rollback" id="apidoc.element.aa-mysql.conn.prototype.rollback">
+        function <span class="apidocSignatureSpan">aa-mysql.conn.prototype.</span>rollback
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rollback = function (callback) {
+  this.query('ROLLBACK', callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var cb = function(err, res, id) {
+  tot++;
+  retErr = retErr || err;
+  retRes[id] = res;
+
+  if (tot === querys.length) {
+    if (retErr) {
+      self.<span class="apidocCodeKeywordSpan">rollback</span>();
+      callback(retErr, retRes);
+    } else {
+      self.commit();
+      callback(null, retRes);
+    }
+  }
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.aa-mysql.conn.prototype.table" id="apidoc.element.aa-mysql.conn.prototype.table">
+        function <span class="apidocSignatureSpan">aa-mysql.conn.prototype.</span>table
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">table = function (name) {
+  var query = new AAQuery();
+  query.conn = this;
+  query.sql.table = mescapeId(this.conf.prefix + name);
+  return query;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```bash
+$ npm install aa-mysql
+```
+
+### Usage
+```js
+// insert amoa400
+conn.<span class="apidocCodeKeywordSpan">table</span>('user').insert({name: 'amoa400'});
+
+// find amoa400
+conn.table('user').where({name: 'amoa400'}).find();
+
+// rename amoa400 to cai0715
+conn.table('user').where({name: 'amoa400'}).update({name: 'cai0715'});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.aa-mysql.conn.prototype.transaction" id="apidoc.element.aa-mysql.conn.prototype.transaction">
+        function <span class="apidocSignatureSpan">aa-mysql.conn.prototype.</span>transaction
+        <span class="apidocSignatureSpan">(querys, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">transaction = function (querys, callback) {
+  var self = this;
+  callback = callback || function() {};
+
+  var tot = 0;
+  var retErr = null;
+  var retRes = [];
+  var cb = function(err, res, id) {
+    tot++;
+    retErr = retErr || err;
+    retRes[id] = res;
+
+    if (tot === querys.length) {
+      if (retErr) {
+        self.rollback();
+        callback(retErr, retRes);
+      } else {
+        self.commit();
+        callback(null, retRes);
+      }
+    }
+  }
+
+  this.begin();
+  for (var i = 0; i &lt; querys.length; i++) {
+    (function(i){
+      self.query(querys[i], function(err, res) {
+        cb(err, res, i);
+      });
+    })(i);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    console.log(err);
+    return;
+  }
+  console.log(res);
+});
+
+// transaction
+conn.<span class="apidocCodeKeywordSpan">transaction</span>([
+  conn.table('user').option({get: true}).insert({name: 'amoa400'}),
+  conn.table('user').option({get: true}).insert({id: 'hi', name: 'cai0715'})
+  // will cause rollback, because id must be number
+], function(err, res) {
+  if (err) {
+    console.log(err);
+    return;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.aa-mysql.pool" id="apidoc.module.aa-mysql.pool">module aa-mysql.pool</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.aa-mysql.pool.pool" id="apidoc.element.aa-mysql.pool.pool">
+        function <span class="apidocSignatureSpan">aa-mysql.</span>pool
+        <span class="apidocSignatureSpan">(conf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pool = function (conf) {
+  // default config
+  this.conf = {};
+  for (var i in conf) {
+    this.conf[i] = conf[i];
+  }
+  // total connections
+  this.totConn = 0;
+  // free connections
+  this.freeConn = [];
+  // active connections
+  this.activeConn = [];
+  // waiting list (not that waiter)
+  this.waiter = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.aa-mysql.pool.prototype" id="apidoc.module.aa-mysql.pool.prototype">module aa-mysql.pool.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.aa-mysql.pool.prototype.create" id="apidoc.element.aa-mysql.pool.prototype.create">
+        function <span class="apidocSignatureSpan">aa-mysql.pool.prototype.</span>create
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (callback) {
+  callback = callback || function() {};
+
+  var conn = new AAConn(this.conf);
+  conn.class = 'active';
+  this.activeConn.push(conn);
+  this.totConn++;
+
+  var self = this;
+  conn.connect(function(err) {
+    if (!err) {
+      callback(null, conn);
+    }
+    else {
+      self.delete(conn);
+      callback('cannot create new connection');
+    }
+  });
+
+  // bind events
+  conn.on('error', function(err) {
+    self.delete(conn);
+  });
+  conn.on('end', function(err) {
+    self.delete(conn);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+prefix: 'aa_',
+db: 'aa-mysql',
+connLimit: 20
+});
+
+// use single connection to query
+// you can also use connection pool, and it is recommended
+var conn = aamysql.<span class="apidocCodeKeywordSpan">create</span>();
+conn.connect(function(err) {
+if (err) {
+  console.log(err);
+  return;
+}
+
+// select
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.aa-mysql.pool.prototype.delete" id="apidoc.element.aa-mysql.pool.prototype.delete">
+        function <span class="apidocSignatureSpan">aa-mysql.pool.prototype.</span>delete
+        <span class="apidocSignatureSpan">(conn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">delete = function (conn) {
+  conn = conn || {};
+  this.totConn--;
+
+  // free conn
+  if (conn.class == 'free') {
+    var index = this.freeConn.indexOf(conn);
+    if (index !== -1) {
+      conn.class = 'delete';
+      conn.close();
+      this.freeConn.splice(index, 1);
+    }
+  }
+  // active conn
+  else {
+    var index = this.activeConn.indexOf(conn);
+    if (index !== -1) {
+      conn.class = 'delete';
+      conn.close();
+      this.activeConn.splice(index, 1);
+    }
+  }
+
+  this.waiterGet();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// find amoa400
+conn.table('user').where({name: 'amoa400'}).find();
+
+// rename amoa400 to cai0715
+conn.table('user').where({name: 'amoa400'}).update({name: 'cai0715'});
+
+// delete cai0715
+conn.table('user').where({name: 'cai0715'}).<span class="apidocCodeKeywordSpan">delete</span>();
+
+// select users whose id is less than 2 or greater than 3, limit 10
+conn.table('user').where({id: [2, '&lt;']}, {id: [3, '&gt;']}, 'OR').limit(10).select
+();
+```
+
+### Example
+```js
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.aa-mysql.pool.prototype.get" id="apidoc.element.aa-mysql.pool.prototype.get">
+        function <span class="apidocSignatureSpan">aa-mysql.pool.prototype.</span>get
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (callback) {
+  callback = callback || function() {};
+
+  // exist free connection
+  if (this.freeConn.length &gt; 0) {
+    var conn = this.freeConn.shift();
+    conn.class = 'active';
+    this.activeConn.push(conn);
+    callback(null, conn);
+    return;
+  }
+
+  // create new connection
+  if (this.conf.connLimit === 0 || this.totConn &lt; this.conf.connLimit) {
+    this.create(callback);
+    return;
+  }
+
+  // add to waiting list
+  this.waiter.push(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ *
+ * @param {Object} query data
+ */
+AAPool.prototype.run = function(data, callback) {
+  var self = this;
+  callback = callback || function() {};
+
+  this.<span class="apidocCodeKeywordSpan">get</span>(function(err, conn) {
+if (err) {
+  callback(err, null);
+  return;
+}
+
+var cb = function(err, res) {
+  self.release(conn);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.aa-mysql.pool.prototype.query" id="apidoc.element.aa-mysql.pool.prototype.query">
+        function <span class="apidocSignatureSpan">aa-mysql.pool.prototype.</span>query
+        <span class="apidocSignatureSpan">(sql, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">query = function (sql, callback) {
+  callback = callback || function() {};
+
+  var self = this;
+  this.get(function(err, conn) {
+    self.release(conn);
+    if (err) {
+      callback(err)
+    }
+    else {
+      conn.query(sql, callback);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  user: this.conf.user,
+  password: this.conf.pass,
+});
+
+// connect and select database
+this.conn.connect(function(err) {
+  if (!err) {
+    //self.<span class="apidocCodeKeywordSpan">query</span>('USE ' + mescapeId(self.conf.db), callback);
+    self.query('USE `' + self.conf.db + '`', callback);
+  }
+  else {
+    callback(err);
+  }
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.aa-mysql.pool.prototype.release" id="apidoc.element.aa-mysql.pool.prototype.release">
+        function <span class="apidocSignatureSpan">aa-mysql.pool.prototype.</span>release
+        <span class="apidocSignatureSpan">(conn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">release = function (conn) {
+  conn = conn || {};
+  if (conn.class !== 'active') return;
+
+  var index = this.activeConn.indexOf(conn);
+  if (index === -1) return;
+
+  conn.class = 'free';
+  this.activeConn.splice(index, 1);
+  this.freeConn.push(conn);
+
+  this.waiterGet();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  this.get(function(err, conn) {
+if (err) {
+  callback(err, null);
+  return;
+}
+
+var cb = function(err, res) {
+  self.<span class="apidocCodeKeywordSpan">release</span>(conn);
+  callback(err, res);
+}
+
+var query = conn.table(data.table);
+for (var i in data) {
+  var value = data[i];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.aa-mysql.pool.prototype.run" id="apidoc.element.aa-mysql.pool.prototype.run">
+        function <span class="apidocSignatureSpan">aa-mysql.pool.prototype.</span>run
+        <span class="apidocSignatureSpan">(data, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">run = function (data, callback) {
+  var self = this;
+  callback = callback || function() {};
+
+  this.get(function(err, conn) {
+    if (err) {
+      callback(err, null);
+      return;
+    }
+
+    var cb = function(err, res) {
+      self.release(conn);
+      callback(err, res);
+    }
+
+    var query = conn.table(data.table);
+    for (var i in data) {
+      var value = data[i];
+
+      if (i == 'join') {
+        for (var j = 0; j &lt; value.length; j++)
+          query = query[i].apply(query, value[j]);
+      }
+      else
+      if (i == 'method') {
+        if (value == 'select' || value == 'find' || value == 'delete')
+          query = query[value].apply(query, [cb]);
+        else
+          query = query[value].apply(query, [data.data, cb]);
+        return query;
+      }
+      else
+      if (typeof query[i] == 'function')
+        query = query[i].apply(query, value);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.aa-mysql.pool.prototype.table" id="apidoc.element.aa-mysql.pool.prototype.table">
+        function <span class="apidocSignatureSpan">aa-mysql.pool.prototype.</span>table
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">table = function (name) {
+  var query = new AAQuery();
+  query.pool = this;
+  query.sql.table = mescapeId(this.conf.prefix + name);
+  return query;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```bash
+$ npm install aa-mysql
+```
+
+### Usage
+```js
+// insert amoa400
+conn.<span class="apidocCodeKeywordSpan">table</span>('user').insert({name: 'amoa400'});
+
+// find amoa400
+conn.table('user').where({name: 'amoa400'}).find();
+
+// rename amoa400 to cai0715
+conn.table('user').where({name: 'amoa400'}).update({name: 'cai0715'});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.aa-mysql.pool.prototype.waiterGet" id="apidoc.element.aa-mysql.pool.prototype.waiterGet">
+        function <span class="apidocSignatureSpan">aa-mysql.pool.prototype.</span>waiterGet
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waiterGet = function () {
+  if (this.waiter.length &gt; 0) {
+    this.get(this.waiter.shift());
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ var index = this.activeConn.indexOf(conn);
+ if (index === -1) return;
+
+ conn.class = 'free';
+ this.activeConn.splice(index, 1);
+ this.freeConn.push(conn);
+
+ this.<span class="apidocCodeKeywordSpan">waiterGet</span>();
+}
+
+/**
+* select a table and return a query obj to chain
+*
+* @param {String} table name
+*/
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.aa-mysql.query" id="apidoc.module.aa-mysql.query">module aa-mysql.query</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.aa-mysql.query.query" id="apidoc.element.aa-mysql.query.query">
+        function <span class="apidocSignatureSpan">aa-mysql.</span>query
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">query = function () {
+  this.sql = {};
+  this.op = {};
+  this.conn = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  user: this.conf.user,
+  password: this.conf.pass,
+});
+
+// connect and select database
+this.conn.connect(function(err) {
+  if (!err) {
+    //self.<span class="apidocCodeKeywordSpan">query</span>('USE ' + mescapeId(self.conf.db), callback);
+    self.query('USE `' + self.conf.db + '`', callback);
+  }
+  else {
+    callback(err);
+  }
+});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.aa-mysql.query.prototype" id="apidoc.module.aa-mysql.query.prototype">module aa-mysql.query.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.aa-mysql.query.prototype.delete" id="apidoc.element.aa-mysql.query.prototype.delete">
+        function <span class="apidocSignatureSpan">aa-mysql.query.prototype.</span>delete
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">delete = function (callback) {
+  this.sql.final = 'DELETE FROM ';
+  this.sql.final += this.sql.table;
+  this.sql.final += ' WHERE '
+  this.sql.final += this.sql.where;
+  this.sql.final += ';';
+
+  return this.exec(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// find amoa400
+conn.table('user').where({name: 'amoa400'}).find();
+
+// rename amoa400 to cai0715
+conn.table('user').where({name: 'amoa400'}).update({name: 'cai0715'});
+
+// delete cai0715
+conn.table('user').where({name: 'cai0715'}).<span class="apidocCodeKeywordSpan">delete</span>();
+
+// select users whose id is less than 2 or greater than 3, limit 10
+conn.table('user').where({id: [2, '&lt;']}, {id: [3, '&gt;']}, 'OR').limit(10).select
+();
+```
+
+### Example
+```js
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.aa-mysql.query.prototype.exec" id="apidoc.element.aa-mysql.query.prototype.exec">
+        function <span class="apidocSignatureSpan">aa-mysql.query.prototype.</span>exec
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">exec = function (callback) {
+  callback = callback || function() {};
+
+  if (this.op.explain) {
+    this.sql.final = 'EXPLAIN ' + this.sql.final;
+  }
+  if (this.op.show) {
+    console.log(this.sql.final);
+    return this.sql.final;
+  }
+  if (this.op.get) {
+    return this.sql.final;
+  }
+
+  if (this.pool) {
+    this.conn = this.pool;
+  }
+
+  var self = this;
+  this.conn.query(this.sql.final, function(err, data) {
+    if (err) {
+      callback(err);
+    }
+    else
+    if (self.op.find &amp;&amp; data) {
+      callback(err, data[0]);
+    }
+    else {
+      callback(err, data);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+this.sql.final += ' FROM ';
+this.sql.final += this.sql.table;
+this.sql.final += this.sql.where ? ' WHERE ' + this.sql.where : '';
+this.sql.final += this.sql.order ? ' ORDER BY ' + this.sql.order : '';
+this.sql.final += this.sql.limit ? ' LIMIT ' + this.sql.limit : '';
+this.sql.final += ';';
+
+return this.<span class="apidocCodeKeywordSpan">exec</span>(callback);
+}
+
+/**
+ * find (select limit 1)
+ */
+AAQuery.prototype.find = function(callback) {
+this.op.find = 1;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.aa-mysql.query.prototype.field" id="apidoc.element.aa-mysql.query.prototype.field">
+        function <span class="apidocSignatureSpan">aa-mysql.query.prototype.</span>field
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">field = function () {
+  arg = arguments;
+
+  this.sql.field = '';
+  for (var i = 0; i &lt; arg.length; i++) {
+    if (i !== 0) {
+      this.sql.field += ', ';
+    }
+    if (typeof arg[i] === 'object') {
+      this.sql.field += arg[i][1] ? arg[i][0] : mescapeId(arg[i][0]);
+      if (arg[i].length &gt; 2) {
+        this.sql.field += ' AS ' + (arg[i][3] ? arg[i][2] : mescapeId(arg[i][2]));
+      }
+    }
+    else {
+      this.sql.field += mescapeId(arg[i]);
+    }
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.aa-mysql.query.prototype.find" id="apidoc.element.aa-mysql.query.prototype.find">
+        function <span class="apidocSignatureSpan">aa-mysql.query.prototype.</span>find
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">find = function (callback) {
+  this.op.find = 1;
+  return this.select(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### Usage
+```js
+// insert amoa400
+conn.table('user').insert({name: 'amoa400'});
+
+// find amoa400
+conn.table('user').where({name: 'amoa400'}).<span class="apidocCodeKeywordSpan">find</span>();
+
+// rename amoa400 to cai0715
+conn.table('user').where({name: 'amoa400'}).update({name: 'cai0715'});
+
+// delete cai0715
+conn.table('user').where({name: 'cai0715'}).delete();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.aa-mysql.query.prototype.insert" id="apidoc.element.aa-mysql.query.prototype.insert">
+        function <span class="apidocSignatureSpan">aa-mysql.query.prototype.</span>insert
+        <span class="apidocSignatureSpan">(data, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">insert = function (data, callback) {
+  data = (data instanceof Array) ? data : [data];
+  callback = callback || function() {};
+
+  this.sql.final = 'INSERT INTO ';
+  this.sql.final += this.sql.table;
+
+  this.sql.final += ' (';
+  var  flag = false;
+  for (var i in data[0]) {
+    if (flag) {
+      this.sql.final += ', ';
+    }
+    else {
+      flag = true;
+    }
+    this.sql.final += mescapeId(i);
+  }
+  this.sql.final += ') ';
+
+  this.sql.final += 'VALUES ';
+  for (var i = 0; i &lt; data.length; i++) {
+    if (i !== 0) {
+      this.sql.final += ', ';
+    }
+    var flag = false;
+    this.sql.final += '(';
+    for (var j in data[0]) {
+      if (flag) {
+        this.sql.final += ', ';
+      }
+      else {
+        flag = true;
+      }
+      this.sql.final += mescape(data[i][j]);
+    }
+    this.sql.final += ')';
+  }
+  this.sql.final += ';';
+
+  return this.exec(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```bash
+$ npm install aa-mysql
+```
+
+### Usage
+```js
+// insert amoa400
+conn.table('user').<span class="apidocCodeKeywordSpan">insert</span>({name: 'amoa400'});
+
+// find amoa400
+conn.table('user').where({name: 'amoa400'}).find();
+
+// rename amoa400 to cai0715
+conn.table('user').where({name: 'amoa400'}).update({name: 'cai0715'});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.aa-mysql.query.prototype.join" id="apidoc.element.aa-mysql.query.prototype.join">
+        function <span class="apidocSignatureSpan">aa-mysql.query.prototype.</span>join
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">join = function () {
+  if (typeof arguments[0] === 'string') {
+    var arg = [];
+    arg.push(arguments);
+  } else {
+    arg = arguments;
+  }
+
+  if (this.pool) {
+    this.conn = this.pool;
+  }
+
+  for (var i = 0; i &lt; arg.length; i++) {
+    this.sql.table += ' LEFT JOIN ' + mescapeId(this.conn.conf.prefix + arg[i][0]);
+    this.sql.table += arg[i][1] ? ' ON ' + this.where(arg[i][1], 'JOIN') : '';
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.aa-mysql.query.prototype.limit" id="apidoc.element.aa-mysql.query.prototype.limit">
+        function <span class="apidocSignatureSpan">aa-mysql.query.prototype.</span>limit
+        <span class="apidocSignatureSpan">(offset, rows)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">limit = function (offset, rows) {
+  if (typeof rows != 'number') {
+    rows = offset;
+    offset = 0;
+  }
+
+  this.sql.limit = '';
+  this.sql.limit += offset ? offset + ', ' : '';
+  this.sql.limit += rows;
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// rename amoa400 to cai0715
+conn.table('user').where({name: 'amoa400'}).update({name: 'cai0715'});
+
+// delete cai0715
+conn.table('user').where({name: 'cai0715'}).delete();
+
+// select users whose id is less than 2 or greater than 3, limit 10
+conn.table('user').where({id: [2, '&lt;']}, {id: [3, '&gt;']}, 'OR').<span class="apidocCodeKeywordSpan
+">limit</span>(10).select();
+```
+
+### Example
+```js
+var aamysql = require('aa-mysql');
+
+// config
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.aa-mysql.query.prototype.option" id="apidoc.element.aa-mysql.query.prototype.option">
+        function <span class="apidocSignatureSpan">aa-mysql.query.prototype.</span>option
+        <span class="apidocSignatureSpan">(op)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">option = function (op) {
+  this.op = op;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return;
+  }
+  console.log(res);
+});
+
+// transaction
+conn.transaction([
+  conn.table('user').<span class="apidocCodeKeywordSpan">option</span>({get: true}).insert({name: 'amoa400'}),
+  conn.table('user').option({get: true}).insert({id: 'hi', name: 'cai0715'})
+  // will cause rollback, because id must be number
+], function(err, res) {
+  if (err) {
+    console.log(err);
+    return;
+  }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.aa-mysql.query.prototype.order" id="apidoc.element.aa-mysql.query.prototype.order">
+        function <span class="apidocSignatureSpan">aa-mysql.query.prototype.</span>order
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">order = function () {
+  if (typeof arguments[0] === 'string') {
+    var arg = [];
+    arg.push(arguments);
+  }
+  else {
+    arg = arguments;
+  }
+
+  this.sql.order = '';
+  for (var i = 0; i &lt; arg.length; i++) {
+    if (i != 0) {
+      this.sql.order += ', ';
+    }
+    this.sql.order += arg[i][2] ? arg[i][0] : mescapeId(arg[i][0]);
+    this.sql.order += ' ' + (arg[i][1] || 'ASC');
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.aa-mysql.query.prototype.page" id="apidoc.element.aa-mysql.query.prototype.page">
+        function <span class="apidocSignatureSpan">aa-mysql.query.prototype.</span>page
+        <span class="apidocSignatureSpan">(num, rows)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">page = function (num, rows) {
+  num = num || 1;
+  rows = rows || 10;
+
+  this.sql.limit = ((num - 1) * rows) + ', ' + rows;
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.aa-mysql.query.prototype.select" id="apidoc.element.aa-mysql.query.prototype.select">
+        function <span class="apidocSignatureSpan">aa-mysql.query.prototype.</span>select
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">select = function (callback) {
+  if (this.op.find) {
+    this.sql.limit = '1';
+  }
+
+  this.sql.final = 'SELECT ';
+  this.sql.final += this.sql.field ? this.sql.field : '*';
+  this.sql.final += ' FROM ';
+  this.sql.final += this.sql.table;
+  this.sql.final += this.sql.where ? ' WHERE ' + this.sql.where : '';
+  this.sql.final += this.sql.order ? ' ORDER BY ' + this.sql.order : '';
+  this.sql.final += this.sql.limit ? ' LIMIT ' + this.sql.limit : '';
+  this.sql.final += ';';
+
+  return this.exec(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// rename amoa400 to cai0715
+conn.table('user').where({name: 'amoa400'}).update({name: 'cai0715'});
+
+// delete cai0715
+conn.table('user').where({name: 'cai0715'}).delete();
+
+// select users whose id is less than 2 or greater than 3, limit 10
+conn.table('user').where({id: [2, '&lt;']}, {id: [3, '&gt;']}, 'OR').limit(10).<span class="apidocCodeKeywordSpan">select</span>();
+```
+
+### Example
+```js
+var aamysql = require('aa-mysql');
+
+// config
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.aa-mysql.query.prototype.update" id="apidoc.element.aa-mysql.query.prototype.update">
+        function <span class="apidocSignatureSpan">aa-mysql.query.prototype.</span>update
+        <span class="apidocSignatureSpan">(data, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">update = function (data, callback) {
+  data = data || {};
+  callback = callback || function() {};
+
+  this.sql.final = 'UPDATE ';
+  this.sql.final += this.sql.table;
+  this.sql.final += ' SET '
+
+  var flag = false;
+  for (var i in data) {
+    if (flag) {
+      this.sql.final += ', ';
+    }
+    else {
+      flag = true;
+    }
+    this.sql.final += mescapeId(i) + ' = ' + ((typeof data[i] === 'object' &amp;&amp; data[i][1] === true) ? data[i][0] : mescape(data[i
+]));
+  }
+
+  this.sql.final += this.sql.where ? ' WHERE ' + this.sql.where : '';
+  this.sql.final += ';';
+
+  return this.exec(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// insert amoa400
+conn.table('user').insert({name: 'amoa400'});
+
+// find amoa400
+conn.table('user').where({name: 'amoa400'}).find();
+
+// rename amoa400 to cai0715
+conn.table('user').where({name: 'amoa400'}).<span class="apidocCodeKeywordSpan">update</span>({name: 'cai0715
+'});
+
+// delete cai0715
+conn.table('user').where({name: 'cai0715'}).delete();
+
+// select users whose id is less than 2 or greater than 3, limit 10
+conn.table('user').where({id: [2, '&lt;']}, {id: [3, '&gt;']}, 'OR').limit(10).select
+();
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.aa-mysql.query.prototype.where" id="apidoc.element.aa-mysql.query.prototype.where">
+        function <span class="apidocSignatureSpan">aa-mysql.query.prototype.</span>where
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">where = function () {
+  var arg = arguments;
+  var join = false;
+
+  if (arg[arg.length - 1] == 'JOIN') {
+    join = true;
+    arg[arg.length - 1] = 'AND';
+  }
+
+  if (arg.length == 1 &amp;&amp; typeof arg[0] == 'string') {
+    if (join) {
+      return arg[0];
+    }
+    else {
+      this.sql.where = arg[0];
+    }
+    return this;
+  }
+
+  function parse(arr) {
+    var tot = arr.length;
+    var logic = (typeof arr[tot - 1] == 'string') ? arr[tot - 1] : 'AND';
+    var sql = '';
+
+    for (var i = 0; i &lt; tot; i++) {
+      if (typeof arr[i] == 'string') continue;
+      sql += (i == 0) ? '' : ' ' + logic + ' ';
+
+      if (arr[i].length === undefined) {
+        var tSql = '';
+        var sum = 0;
+        for (var j in arr[i]) {
+          tSql += (sum &gt; 0) ? ' AND ' : '';
+          sum++;
+          if (typeof arr[i][j] == 'object') {
+            tSql += arr[i][j][2] ? j : mescapeId(j);
+            tSql += ' ' + arr[i][j][1] + ' ';
+            tSql += arr[i][j][3] ? arr[i][j][0] : mescape(arr[i][j][0]);
+          }
+          else {
+            tSql += mescapeId(j) + ' = ' + mescape(arr[i][j]);
+          }
+        }
+
+        sql += (sum &gt; 1) ? '(' + tSql + ')' : tSql;
+      }
+      else
+        sql += '(' + parse(arr[i]) + ')';
+    }
+
+    return sql;
+  }
+
+  if (join)
+    return parse(arg);
+  else
+    this.sql.where = parse(arg);
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### Usage
+```js
+// insert amoa400
+conn.table('user').insert({name: 'amoa400'});
+
+// find amoa400
+conn.table('user').<span class="apidocCodeKeywordSpan">where</span>({name: 'amoa400'}).find();
+
+// rename amoa400 to cai0715
+conn.table('user').where({name: 'amoa400'}).update({name: 'cai0715'});
+
+// delete cai0715
+conn.table('user').where({name: 'cai0715'}).delete();
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
