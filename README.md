@@ -1,6 +1,6 @@
 # npmdoc-aa-mysql
 
-#### api documentation for  [aa-mysql (v1.1.2)](https://github.com/amoa400/aa-mysql)  [![npm package](https://img.shields.io/npm/v/npmdoc-aa-mysql.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-aa-mysql) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-aa-mysql.svg)](https://travis-ci.org/npmdoc/node-npmdoc-aa-mysql)
+#### basic api documentation for  [aa-mysql (v1.1.2)](https://github.com/amoa400/aa-mysql)  [![npm package](https://img.shields.io/npm/v/npmdoc-aa-mysql.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-aa-mysql) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-aa-mysql.svg)](https://travis-ci.org/npmdoc/node-npmdoc-aa-mysql)
 
 #### A simple and flexible mysql library for node.
 
@@ -66,7 +66,8 @@
         "url": "git+https://github.com/amoa400/aa-mysql.git"
     },
     "scripts": {},
-    "version": "1.1.2"
+    "version": "1.1.2",
+    "bin": {}
 }
 ```
 
